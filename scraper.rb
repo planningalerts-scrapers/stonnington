@@ -15,7 +15,7 @@ page = form.submit
 
 page.at("table#ctl00_phContent_gvPlanningRegister").search('tr')[1..-1].each do |r|
   record = {
-    'info_url' => (page.uri + r.at('a')['href']).to_s,
+    'info_url' => (page.uri + URI.encode(r.at('a')['href'])).to_s,
     'comment_url' => "mailto:council@stonnington.vic.gov.au",
     'council_reference' => r.search('td')[0].inner_text,
     'date_received' => Date.strptime(r.search('td')[1].inner_text.strip, '%d/%m/%Y').to_s,
