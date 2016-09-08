@@ -12,9 +12,6 @@ viewurlbase = "https://eplanning.stonnington.vic.gov.au/EPlanning/Public/ViewAct
  
 response = agent.request_with_entity('POST', url, req_body, headers)
 data = JSON.parse(response.body)
-
-res = File.read('res')
-data = JSON.parse(res)
 d = JSON.parse(data['d'])
 av = d['ActivityView']
 
