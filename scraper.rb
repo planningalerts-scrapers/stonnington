@@ -26,7 +26,7 @@ av.each do |r|
     'date_received' => Date.strptime(r['LodgedDate_STRING'], "%d-%b-%Y").to_s
   }
 
-  if ScraperWiki.select("* from data where `council_reference`='#{record['council_reference']}'").empty? 
+  if (ScraperWiki.select("* from data where `council_reference`='#{record['council_reference']}'").empty? rescue true)
     ScraperWiki.save_sqlite(['council_reference'], record)
   else
     puts "Skipping already saved record " + record['council_reference']
