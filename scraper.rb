@@ -4,7 +4,7 @@ require 'json'
 
 agent = Mechanize.new
 # agent.log = Logger.new(STDOUT)
-url = 'https://eplanning.stonnington.vic.gov.au/EPlanning/Services/EPlanningReferenceService.svc/GetList_Register'
+url = 'https://eplanning.stonnington.vic.gov.au/EPlanning/Services/ReferenceService.svc/Get_PlanningRegister'
 req_body = File.read('req')
 headers = {"Content-Type" => "application/json"}
  
