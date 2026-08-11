@@ -1,4 +1,8 @@
+#!/usr/bin/env ruby
 # frozen_string_literal: true
+
+require "bundler/setup"
+Bundler.require
 
 require "scraperwiki"
 require "mechanize"
